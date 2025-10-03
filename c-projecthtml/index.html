@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+          <html lang="en">
+            
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>ALB Target Server IP</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+                body {font-family: 'Inter', sans-serif; background-color: #f0f4f8; color: #1f2937; display: flex; justify-content: >                .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); text-alig>                .ip-label { font-size: 1.1rem; color: #4b5563; margin-bottom: 5px; }
+                .ip-address { font-size: 3rem; font-weight: 900; color: #059669; }
+.note { margin-top: 25px; color: #9ca3af; font-size: 0.85rem; }
+              </style>
+          </head>
+
+          <body>
+              <div class="card">
+                  <div class="ip-label">Served by EC2 Instance Private IP:</div>
+                  <!-- Ansible variable fetches the IP of the remote host -->
+                  <div class="ip-address">{{ ansible_default_ipv4.address }}</div>
+                  <p class="note">Refresh the page to see the IP change as the Load Balancer switches servers.</p>
+              </div>
+          </body>
+
+          </html>
